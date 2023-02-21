@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Progress Bar</title>
+    <style>
+      #progress-bar {
+        width: 100%;
+        height: 30px;
+        border: 1px solid black;
+        position: relative;
+        margin-top: 50px;
+      }
+      
+      #progress {
+        width: 0%;
+        height: 100%;
+        background-color: green;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="progress-bar">
+      <div id="progress"></div>
+    </div>
+    <script>
+      function startProgress() {
+        let progress = 0;
+        let interval = setInterval(() => {
+          progress += Math.random() * 0.02 + 0.014;
+          document.getElementById("progress").style.width = progress + "%";
+          if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+              window.location.href = "https://www.example.com";
+            }, 300);
+          }
+        }, 100);
+      }
+      startProgress();
+    </script>
+  </body>
+</html>
