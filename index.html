@@ -30,7 +30,7 @@
       function startProgress() {
         let progress = 0;
         let interval = setInterval(() => {
-          progress += Math.random() * 0.02 + 0.014;
+          progress += Math.random() * 2 + 1.4;
           document.getElementById("progress").style.width = progress + "%";
           if (progress >= 100) {
             clearInterval(interval);
